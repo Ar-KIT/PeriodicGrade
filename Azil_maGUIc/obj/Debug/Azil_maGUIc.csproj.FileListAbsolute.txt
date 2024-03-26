@@ -1,0 +1,10 @@
+C:\Users\azilr\source\repos\Azil_maGUIc\Azil_maGUIc\bin\Debug\Azil_maGUIc.exe.config
+C:\Users\azilr\source\repos\Azil_maGUIc\Azil_maGUIc\bin\Debug\Azil_maGUIc.exe
+C:\Users\azilr\source\repos\Azil_maGUIc\Azil_maGUIc\bin\Debug\Azil_maGUIc.pdb
+C:\Users\azilr\source\repos\Azil_maGUIc\Azil_maGUIc\obj\Debug\Azil_maGUIc.csproj.AssemblyReference.cache
+C:\Users\azilr\source\repos\Azil_maGUIc\Azil_maGUIc\obj\Debug\Azil_maGUIc.Form1.resources
+C:\Users\azilr\source\repos\Azil_maGUIc\Azil_maGUIc\obj\Debug\Azil_maGUIc.Properties.Resources.resources
+C:\Users\azilr\source\repos\Azil_maGUIc\Azil_maGUIc\obj\Debug\Azil_maGUIc.csproj.GenerateResource.cache
+C:\Users\azilr\source\repos\Azil_maGUIc\Azil_maGUIc\obj\Debug\Azil_maGUIc.csproj.CoreCompileInputs.cache
+C:\Users\azilr\source\repos\Azil_maGUIc\Azil_maGUIc\obj\Debug\Azil_maGUIc.exe
+C:\Users\azilr\source\repos\Azil_maGUIc\Azil_maGUIc\obj\Debug\Azil_maGUIc.pdb
