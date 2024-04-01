@@ -60,20 +60,27 @@ namespace Azil_maGUIc
 
         private void sbtButton_Click(object sender, EventArgs e)
         {
-            if (!ScoreValidator.CheckItems(this))return;
+            try
+            {
+                if (!ScoreValidator.CheckItems(this)) return;
 
-            double[,] quizzes = PeriodicGradeCalculator.ScoresAndItems(2, this, "q");
-            double[,] laboratoryActs = PeriodicGradeCalculator.ScoresAndItems(3, this, "l");
-            double[,] classroomActs = PeriodicGradeCalculator.ScoresAndItems(3, this, "c");
-            double[,] exam = PeriodicGradeCalculator.ScoresAndItems(1, this, "e");
+                double[,] quizzes = PeriodicGradeCalculator.ScoresAndItems(2, this, "q");
+                double[,] laboratoryActs = PeriodicGradeCalculator.ScoresAndItems(3, this, "l");
+                double[,] classroomActs = PeriodicGradeCalculator.ScoresAndItems(3, this, "c");
+                double[,] exam = PeriodicGradeCalculator.ScoresAndItems(1, this, "e");
 
-            double periodicGrade = PeriodicGradeCalculator.SetPeriodicGrade(quizzes, laboratoryActs, classroomActs, exam);
-            double equivalentGrade = PeriodicGradeCalculator.ComputeEquivalenttGrade(periodicGrade);
-            string remarks = equivalentGrade <= 3.0 ? "Passed" : "Failed";
+                double periodicGrade = PeriodicGradeCalculator.SetPeriodicGrade(quizzes, laboratoryActs, classroomActs, exam);
+                if (periodicGrade < 0)
+                {
+                    throw new Exception();
+                }
+                double equivalentGrade = PeriodicGradeCalculator.ComputeEquivalenttGrade(periodicGrade);
+                string remarks = equivalentGrade <= 3.0 ? "Passed" : "Failed";
 
-            ComputeedGrades.Text = periodicGrade.ToString();
-            EquivalentGrade.Text = equivalentGrade.ToString();
-            Remarks.Text = remarks;
+                ComputeedGrades.Text = periodicGrade.ToString();
+                EquivalentGrade.Text = equivalentGrade.ToString();
+                Remarks.Text = remarks;
+            }catch(Exception ex){}
         }
 
 
@@ -206,6 +213,10 @@ namespace Azil_maGUIc
                                         {
                                             values[index1, 0] = score; // Store score at index 0
                                             index1++;
+                                            if (index1 > 0 && index2 > 0 && values[index1 - 1, 0] > values[index2 - 1, 1])
+                                            {
+                                                throw new ArgumentException($"Score cannot exceed items for {textBox.Name}.");
+                                            }
                                         }
                                     }
                                     else if (textBox.Name.ToLower().Contains("items"))
@@ -215,10 +226,6 @@ namespace Azil_maGUIc
                                             values[index2, 1] = item; // Store item at index 1
                                             index2++;
                                         }
-                                    }
-                                    if (index1 > 0 && index2 > 0 && values[index1 - 1, 0] > values[index2 - 1, 1])
-                                    {
-                                        throw new ArgumentException($"Score cannot exceed items for {textBox.Name}.");
                                     }
                                 }
                             }
@@ -236,30 +243,38 @@ namespace Azil_maGUIc
 
         public static double SetPeriodicGrade(double[,] quizzes, double[,] laboratoryActs, double[,] classroomActs, double[,] exam)
         {
-            double qWeight = 0;
-            for (int i = 0; i < quizzes.GetLength(0); i++)
+            try
             {
-                qWeight += quizzes[i, 0] / quizzes[i, 1] * 50 + 50;
+                double qWeight = 0;
+                for (int i = 0; i < quizzes.GetLength(0); i++)
+                {
+                    qWeight += quizzes[i, 0] / quizzes[i, 1] * 50 + 50;
+                }
+                qWeight /= quizzes.GetLength(0);
+                double qComponent = Math.Round(0.1 * qWeight, 3);
+
+                double labScoreSum = Enumerable.Range(0, laboratoryActs.GetLength(0)).Sum(i => laboratoryActs[i, 0]);
+                double labTotalItemSum = Enumerable.Range(0, laboratoryActs.GetLength(0)).Sum(i => laboratoryActs[i, 1]);
+                double lWeight = labScoreSum / labTotalItemSum * 50 + 50;
+                double lComponent = lWeight * 0.5;
+
+                double classScoreSum = Enumerable.Range(0, classroomActs.GetLength(0)).Sum(i => classroomActs[i, 0]);
+                double classTotalSum = Enumerable.Range(0, classroomActs.GetLength(0)).Sum(i => classroomActs[i, 1]);
+                double cWeight = classScoreSum / classTotalSum * 50 + 50;
+                double cComponent = cWeight * 0.1;
+
+                double examScoreSum = Enumerable.Range(0, exam.GetLength(0)).Sum(i => exam[i, 0]);
+                double examTotalSum = Enumerable.Range(0, exam.GetLength(0)).Sum(i => exam[i, 1]);
+                double xWeight = examScoreSum / examTotalSum * 50 + 50;
+                double xComponent = xWeight * 0.3;
+
+                return Math.Round(qComponent + lComponent + cComponent + xComponent, 3);
             }
-            qWeight /= quizzes.GetLength(0);
-            double qComponent = Math.Round(0.1 * qWeight, 3);
-
-            double labScoreSum = Enumerable.Range(0, laboratoryActs.GetLength(0)).Sum(i => laboratoryActs[i, 0]);
-            double labTotalItemSum = Enumerable.Range(0, laboratoryActs.GetLength(0)).Sum(i => laboratoryActs[i, 1]);
-            double lWeight = labScoreSum / labTotalItemSum * 50 + 50;
-            double lComponent = lWeight * 0.5;
-
-            double classScoreSum = Enumerable.Range(0, classroomActs.GetLength(0)).Sum(i => classroomActs[i, 0]);
-            double classTotalSum = Enumerable.Range(0, classroomActs.GetLength(0)).Sum(i => classroomActs[i, 1]);
-            double cWeight = classScoreSum / classTotalSum * 50 + 50;
-            double cComponent = cWeight * 0.1;
-
-            double examScoreSum = Enumerable.Range(0, exam.GetLength(0)).Sum(i => exam[i, 0]);
-            double examTotalSum = Enumerable.Range(0, exam.GetLength(0)).Sum(i => exam[i, 1]);
-            double xWeight = examScoreSum / examTotalSum * 50 + 50;
-            double xComponent = xWeight * 0.3;
-
-            return Math.Round(qComponent + lComponent + cComponent + xComponent, 3);
+            catch (Exception ex)
+            {
+                return -1;
+            }
+            
         }
         public static double ComputeEquivalenttGrade(double percentage)
         {

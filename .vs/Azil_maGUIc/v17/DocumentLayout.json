@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\azilr\\source\\repos\\Azil_maGUIc\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C63C1F98-BCC0-4A77-8747-606716F82DF8}|Azil_maGUIc\\Azil_maGUIc.csproj|C:\\Users\\azilr\\source\\repos\\Azil_maGUIc\\azil_maguic\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C63C1F98-BCC0-4A77-8747-606716F82DF8}|Azil_maGUIc\\Azil_maGUIc.csproj|c:\\users\\azilr\\source\\repos\\azil_maguic\\azil_maguic\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C63C1F98-BCC0-4A77-8747-606716F82DF8}|Azil_maGUIc\\Azil_maGUIc.csproj|solutionrelative:azil_maguic\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C63C1F98-BCC0-4A77-8747-606716F82DF8}|Azil_maGUIc\\Azil_maGUIc.csproj|C:\\Users\\azilr\\source\\repos\\Azil_maGUIc\\azil_maguic\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C63C1F98-BCC0-4A77-8747-606716F82DF8}|Azil_maGUIc\\Azil_maGUIc.csproj|solutionrelative:azil_maguic\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C63C1F98-BCC0-4A77-8747-606716F82DF8}|Azil_maGUIc\\Azil_maGUIc.csproj|C:\\Users\\azilr\\source\\repos\\Azil_maGUIc\\azil_maguic\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{C63C1F98-BCC0-4A77-8747-606716F82DF8}|Azil_maGUIc\\Azil_maGUIc.csproj|solutionrelative:azil_maguic\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C63C1F98-BCC0-4A77-8747-606716F82DF8}|Azil_maGUIc\\Azil_maGUIc.csproj|c:\\users\\azilr\\source\\repos\\azil_maguic\\azil_maguic\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C63C1F98-BCC0-4A77-8747-606716F82DF8}|Azil_maGUIc\\Azil_maGUIc.csproj|solutionrelative:azil_maguic\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,17 +26,16 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\azilr\\source\\repos\\Azil_maGUIc\\Azil_maGUIc\\Program.cs",
               "RelativeDocumentMoniker": "Azil_maGUIc\\Program.cs",
               "ToolTip": "C:\\Users\\azilr\\source\\repos\\Azil_maGUIc\\Azil_maGUIc\\Program.cs",
               "RelativeToolTip": "Azil_maGUIc\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAUAAAA",
+              "ViewState": "AQIAAAQAAAAAAAAAAAASwBAAAAAPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-26T08:28:59.818Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Bookmark",
@@ -48,24 +47,23 @@
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\azilr\\source\\repos\\Azil_maGUIc\\Azil_maGUIc\\Form1.cs",
               "RelativeDocumentMoniker": "Azil_maGUIc\\Form1.cs",
-              "ToolTip": "C:\\Users\\azilr\\source\\repos\\Azil_maGUIc\\Azil_maGUIc\\Form1.cs",
-              "RelativeToolTip": "Azil_maGUIc\\Form1.cs",
-              "ViewState": "AQIAAKYAAAAAAAAAAAAkwLwAAAAbAAAA",
+              "ToolTip": "C:\\Users\\azilr\\source\\repos\\Azil_maGUIc\\Azil_maGUIc\\Form1.cs*",
+              "RelativeToolTip": "Azil_maGUIc\\Form1.cs*",
+              "ViewState": "AQIAAMcAAAAAAAAAAAAcwNYAAAA1AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-26T06:51:06.594Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "C:\\Users\\azilr\\source\\repos\\Azil_maGUIc\\Azil_maGUIc\\Form1.cs",
               "RelativeDocumentMoniker": "Azil_maGUIc\\Form1.cs",
               "ToolTip": "C:\\Users\\azilr\\source\\repos\\Azil_maGUIc\\Azil_maGUIc\\Form1.cs [Design]",
               "RelativeToolTip": "Azil_maGUIc\\Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-26T06:42:26.42Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-03-26T06:42:26.42Z"
             }
           ]
         }
